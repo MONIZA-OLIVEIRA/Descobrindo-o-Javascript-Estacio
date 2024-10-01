@@ -1,0 +1,86 @@
+/* Formatação geral do body */
+body {
+    background-color: #ea8a46; /* Cor de fundo do corpo */
+    color: #000; /* Cor do texto */
+    margin: 0;
+    padding: 0;
+}
+
+/* Formatação do header */
+header {
+    height: 60px;
+}
+
+/* Formatação da área principal */
+main {
+    height: calc(100vh - 100px); /* Altura da área principal */
+    overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+    padding: 20px;
+}
+
+/* Formatação do footer */
+footer {
+    height: 25px;
+    background-color: #97b9db;
+    text-align: center;
+    padding: 5px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 767px) {
+    .form-group {
+        margin-bottom: 15px; /* Espaçamento entre os campos do formulário em telas pequenas */
+    }
+}
+
+/* Estilo para a seção de receitas */
+.receitas {
+    display: flex; /* Usa Flexbox para alinhar as receitas */
+    flex-wrap: wrap; /* Permite que as receitas quebrem para a próxima linha */
+    justify-content: space-around; /* Distribui o espaço entre as receitas */
+    padding: 20px; /* Espaçamento interno */
+}
+
+/* Estilo para cada receita individual */
+.receita {
+    background-color: #fff; /* Fundo branco para cada receita */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 300px; /* Largura fixa para cada receita */
+    margin: 15px; /* Espaçamento entre as receitas */
+    overflow: hidden; /* Oculta qualquer conteúdo que transborde */
+    transition: transform 0.2s; /* Transição suave para efeito hover */
+}
+
+/* Efeito hover para cada receita */
+.receita:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente ao passar o mouse */
+}
+
+/* Título da receita */
+.receita h2 {
+    font-size: 1.5em; /* Tamanho da fonte do título */
+    margin: 10px; /* Margem em torno do título */
+}
+
+/* Descrição da receita */
+.receita p {
+    font-size: 1em; /* Tamanho da fonte da descrição */
+    margin: 10px; /* Margem em torno da descrição */
+}
+
+/* Botão de detalhes */
+.receita button {
+    background-color: #ea8a46; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none; /* Remove bordas do botão */
+    border-radius: 4px; /* Bordas arredondadas no botão */
+    padding: 10px 15px; /* Espaçamento interno do botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    margin: 10px; /* Margem em torno do botão */
+}
+
+/* Efeito hover para o botão */
+.receita button:hover {
+    background-color: #f68e1f; /* Cor de fundo ao passar o mouse */
+}

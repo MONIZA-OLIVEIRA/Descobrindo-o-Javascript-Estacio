@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Receitas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="formatos.css">
+    <link rel="stylesheet" href="receitas.css">
+    <script>
+        const receitas = [
+            {
+                "titulo": "Bolo de Chocolate Low Carb",
+                "imagem": "imagem_receita1.jpg",
+                "preparo": "Bata os ovos e o adoçante. Adicione os outros ingredientes e misture bem. Incorpore o fermento com cuidado. Coloque a massa em uma forma e asse por 30 a 40 minutos. Derreta o chocolate e misture com o leite vegetal para a cobertura. Desenforme o bolo e sirva com a cobertura.",
+                "ingredientes": [
+                    "3 ovos",
+                    "1/2 xícara de adoçante culinário",
+                    "3 colheres de sopa de cacau em pó",
+                    "3 colheres de sopa de óleo de coco",
+                    "1 xícara de farinha de castanha do Pará",
+                    "1 colher de sopa de farinha de linhaça dourada",
+                    "1 colher de café de essência de baunilha",
+                    "1/2 colher de sopa de fermento em pó",
+                    "100g de chocolate amargo",
+                    "8 colheres de sopa de leite vegetal"
+                ]
+            },
+            {
+                "titulo": "Salada de Quinoa",
+                "imagem": "imagem_receita2.jpg",
+                "preparo": "Coe a quinoa e lave bem. Cozinhe a quinoa com a água por 15 minutos. Deixe esfriar e misture com os outros ingredientes. Tempere a gosto e sirva.",
+                "ingredientes": [
+                    "1 xícara de quinoa",
+                    "2 xícaras de água",
+                    "1 pepino picado",
+                    "1 tomate picado",
+                    "1/4 de cebola roxa picada",
+                    "Suco de 1 limão",
+                    "Azeite a gosto",
+                    "Sal e pimenta a gosto"
+                ]
+            },
+            {
+                "titulo": "Frango ao Curry com Coco",
+                "imagem": "imagem_receita3.jpg",
+                "preparo": "Em uma panela, aqueça o óleo e refogue a cebola. Adicione o frango cortado em cubos e doure. Adicione o curry e o leite de coco. Cozinhe por 15 minutos e sirva com brócolis cozidos.",
+                "ingredientes": [
+                    "500g de peito de frango",
+                    "1 cebola picada",
+                    "2 colheres de sopa de curry em pó",
+                    "1 xícara de leite de coco",
+                    "Azeite a gosto",
+                    "Sal a gosto",
+                    "Brócolis para acompanhar"
+                ]
+            },
+            {
+                "titulo": "Pão Low Carb de Linhaça",
+                "imagem": "imagem_receita4.jpg",
+                "preparo": "Misture todos os ingredientes em uma tigela. Coloque a massa em uma forma e asse por 30 minutos a 180°C. Deixe esfriar e fatie.",
+                "ingredientes": [
+                    "1 xícara de farinha de linhaça",
+                    "3 ovos",
+                    "1 colher de sopa de fermento em pó",
+                    "1/2 xícara de água",
+                    "Sal a gosto"
+                ]
+            },
+            {
+                "titulo": "Espaguete de Abobrinha com Molho Pesto",
+                "imagem": "imagem_receita5.jpg",
+                "preparo": "Corte a abobrinha em tiras finas para formar o espaguete. Refogue rapidamente e adicione o molho pesto. Misture bem e sirva.",
+                "ingredientes": [
+                    "2 abobrinhas",
+                    "1/2 xícara de molho pesto",
+                    "Queijo parmesão a gosto",
+                    "Sal e pimenta a gosto"
+                ]
+            }
+        ];
+
+        function getListaIngredientes(ingredientes) {
+            let texto = '<ul>';
+            ingredientes.map(ingrediente => {
+                texto += `<li>${ingrediente}</li>`;
+            });
+            texto += '</ul>';
+            return texto;
+        }
+
+        function getCard(receita) {
+            return `
+                <div class="card" style="width: 250px; margin: 10px;">
+                    <img src="${receita.imagem}" class="card-img-top" alt="${receita.titulo}">
+                    <div class="card-body">
+                        <h5 class="card-title">${receita.titulo}</h5>
+                        <div class="card-text">
+                            <strong>Ingredientes:</strong>
+                            ${getListaIngredientes(receita.ingredientes)}
+                            <hr>
+                            <strong>Modo de Preparo:</strong>
+                            <p>${receita.preparo}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function preencheCatalogo() {
+            const pnlCatalogo = document.getElementById('pnlCatalogo');
+            const receitasHtml = receitas.map(receita => getCard(receita)).join('');
+            pnlCatalogo.innerHTML = receitasHtml;
+        }
+
+        window.onload = preencheCatalogo;
+    </script>
+</head>
+<body class="bg-warning">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="receitas.html">Receitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="usuarios.html">Usuários</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div id="pnlCatalogo" class="d-flex flex-wrap">
+                <!-- Os cartões de receitas serão preenchidos aqui pelo JavaScript -->
+            </div>
+        </div>
+    </main>
+    <footer class="text-center">
+        <p>&copy; 2024 Receitas. Todos os direitos reservados.</p>
+    </footer>
+    <style>
+        body {
+            background-color: #e8e8e8;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #f8f9fa;
+            padding: 10px;
+            color: #000;
+        }
+    </style>
+</body>
+</html>

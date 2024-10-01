@@ -1,0 +1,67 @@
+/* Formatação geral do body */
+body {
+    background-color: #FFA500; /* Cor de fundo laranja */
+    color: #000; /* Cor do texto para garantir visibilidade */
+    margin: 0;
+    padding: 0;
+}
+
+/* Formatação específica para a página de receitas */
+main {
+    padding: 20px;
+}
+
+.card {
+    margin-bottom: 20px; /* Espaçamento entre os cards */
+    height: 100%; /* Faz com que o card ocupe toda a altura disponível */
+}
+
+/* Ajusta a altura e a largura da imagem dentro do card */
+.card-img-top {
+    width: 100%; /* A imagem ocupa toda a largura do card */
+    height: 200px; /* Ajusta a altura da imagem */
+    object-fit: cover; /* Mantém a imagem proporcional e cobre o espaço do card */
+}
+
+/* Estilo para o corpo do card */
+.card-body {
+    padding: 10px;
+}
+
+.card-title {
+    font-size: 1.2rem; /* Ajusta o tamanho do título */
+}
+
+.card-text {
+    font-size: 0.9rem; /* Ajusta o tamanho do texto */
+}
+
+hr {
+    margin: 10px 0; /* Espaçamento para o separador */
+}
+
+/* Centralização do texto no footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #fff; /* Cor de fundo do footer */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 767px) {
+    .card {
+        width: 100%; /* Faz com que o card ocupe toda a largura disponível em telas pequenas */
+        margin: 10px 0; /* Reduz o espaço entre os cards em telas pequenas */
+    }
+
+    .card-img-top {
+        height: auto; /* Ajusta a altura da imagem automaticamente */
+    }
+}
+
+/* Responsividade para telas médias (tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .card {
+        width: 100%; /* Faz com que o card ocupe toda a largura disponível em tablets */
+    }
+}
